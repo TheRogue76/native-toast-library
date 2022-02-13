@@ -17,6 +17,6 @@ const NativeToastLibrary = NativeModules.NativeToastLibrary
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return NativeToastLibrary.multiply(a, b);
+export function show(text: string) {
+  return NativeToastLibrary.show(text);
 }

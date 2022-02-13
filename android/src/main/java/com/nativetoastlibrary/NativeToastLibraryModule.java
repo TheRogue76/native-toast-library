@@ -1,5 +1,8 @@
 package com.nativetoastlibrary;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 
 import com.facebook.react.bridge.Promise;
@@ -26,9 +29,8 @@ public class NativeToastLibraryModule extends ReactContextBaseJavaModule {
     // Example method
     // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+    public void show(String text) {
+      Context context = getReactApplicationContext();
+      Toast.makeText(context, text, Toast.LENGTH_LONG).show();
     }
-
-    public static native int nativeMultiply(int a, int b);
 }
